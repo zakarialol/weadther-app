@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="./build/css/style.css" />
     <title>weather app</title>
   </head>
-  <body class="flex justify-center h-screen bg-blue-600">
+  <body class="bg-blue-600">
     <div
-      data-selector="main-container"
-      class="w-11/12 p-4 bg-white rounded-sm h-"
-    >
-      <div data-selector="container">
+        data-selector="main-container"
+        class="flex flex-col justify-between w-11/12 min-h-screen mx-auto bg-white rounded-sm"
+      >
+      <div data-selector="container" class="p-4">
         <!-- header -->
         <header class="flex gap-4">
           <!-- input with search icon styling -->
@@ -65,12 +65,17 @@
               <p data-dogry-value="dogry-value" class="inline text-2xl font-black"></p>
               <sup data-sup-value="sup-value" class="text-xl"></sup>
             </div>
-            <p data-weader-condition-text="weader-condition" class="font-serif text-2xl"></p>
+            <p data-weader-condition-text="weader-condition" class="font-serif text-2xl capitalize"></p>
           </div>
         </div>
       </div>
+      <!-- weather moment by hours  -->
+        <div class="max-w-full px-4 mt-8 mb-6 border-t border-t-gray-200">
+            <div data-weather-moments="weather-moments-main-div" class="flex gap-4 mt-4 overflow-x-auto">
+            </div>
+        </div>
     </div>
-    <!-- this line for linging js *)* -->
+    <!-- this line for linking js *)* -->
     <script type="module" src="main.js"></script>
   </body>
 </html>
