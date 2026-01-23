@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./build/css/style.css" />
+    <title>weather app</title>
+  </head>
+  <body class="flex justify-center h-screen bg-blue-600">
+    <div
+      data-selector="main-container"
+      class="w-11/12 p-4 bg-white rounded-sm h-"
+    >
+      <div data-selector="container">
+        <!-- header -->
+        <header class="flex gap-4">
+          <!-- input with search icon styling -->
+          <div data-input-holder="input-div" class="relative flex-1">
+            <form action="" type="sub" class="h-full">
+                <input
+                  data-input="searchInput"
+                  type="text"
+                  class="flex w-full h-full pl-2 border rounded focus:outline-none peer"
+                />
+            </form>
+          <!--fake place holder -->
+              <div class="absolute flex items-center gap-2 text-gray-400 -translate-y-1/2 pointer-events-none top-1/2 left-2 peer-focus:hidden">
+                <button>
+                        <svg
+                          class="w-4 h-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          >
+                          <path
+                              fill="currentColor"
+                              d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"
+                          /></svg>
+                </button>
+                <p>search ...</p>
+              </div>
+          </div>
+          <!-- localization styling -->
+          <button data-localization="localziation-Btn" class="h-full p-2 border rounded cursor-pointer hover:text-white group hover:border-blue-600 ">
+            <svg 
+                    class="w-4 h-4 stroke-orange-600 group-hover:stroke-blue-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </button>
+        </header>
+        <div data-info-holder="weader-info">
+          <div data-image-holder="image-holder">
+            <img src="" data-img="weatherSvg" alt="" data-weaderImage="" />
+          </div>
+          <div data-dogry-main-div-holder="dogry-div-holder" class="text-center">
+            <div data-dogree-holder="dogree-holder">
+              <p data-dogry-value="dogry-value" class="inline text-2xl font-black"></p>
+              <sup data-sup-value="sup-value" class="text-xl"></sup>
+            </div>
+            <p data-weader-condition-text="weader-condition" class="font-serif text-2xl"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- this line for linging js *)* -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
