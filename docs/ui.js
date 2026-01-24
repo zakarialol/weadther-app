@@ -95,10 +95,10 @@ function htmlFunc(finalWeatherArray){
   let html =''
   finalWeatherArray.slice(1).forEach((itm,index)=>{
     html += `<div data-moment="${itm-index}" class='w-14 text-center'>
-                    <p class ='text-[10px]'>${itm.time}</p>
+                    <p class ='text-sm'>${itm.time}</p>
                     <div><img src="/img/${itm.weathercondition}.svg" alt=""></div>
-                    <p class='text-[10px]'>${itm.temp}&deg</p>
-                    <p class='whitespace-nowrap text-[8px]'>${itm.date}</p>
+                    <p class='text-sm'>${itm.temp}&deg</p>
+                    <p class='whitespace-nowrap text-[10px]'>${itm.date}</p>
             </div>`
   })
   return html;
