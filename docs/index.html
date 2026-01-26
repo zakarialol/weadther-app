@@ -9,35 +9,36 @@
   <body class="bg-blue-600">
     <div
         data-selector="main-container"
-        class="flex flex-col justify-between w-11/12 min-h-screen mx-auto bg-white rounded-sm"
+        class="flex flex-col justify-between w-[98%] min-h-screen mx-auto bg-white rounded-sm"
       >
-      <div data-selector="container" class="p-4">
+      <div data-selector="container" class="px-4 pt-4">
         <!-- header -->
         <header class="flex gap-4">
           <!-- input with search icon styling -->
           <div data-input-holder="input-div" class="relative flex-1">
-            <form action="" type="sub" class="h-full">
+            <form action="" type="sub" id="form" class="h-full">
                 <input
                   data-input="searchInput"
+                  placeholder=" "
                   type="text"
                   class="flex w-full h-full pl-2 border rounded focus:outline-none peer"
                 />
+                <!--fake place holder -->
+                    <div class="absolute flex items-center gap-2 text-gray-400 transition-opacity -translate-y-1/2 opacity-0 pointer-events-none top-1/2 left-2 peer-focus:opacity-0 peer-placeholder-shown:opacity-100">
+                      <button>
+                              <svg
+                                class="w-4 h-4"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                >
+                                <path
+                                    fill="currentColor"
+                                    d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"
+                                /></svg>
+                      </button>
+                      <p>search ...</p>
+                    </div>
             </form>
-          <!--fake place holder -->
-              <div class="absolute flex items-center gap-2 text-gray-400 -translate-y-1/2 pointer-events-none top-1/2 left-2 peer-focus:hidden">
-                <button>
-                        <svg
-                          class="w-4 h-4"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          >
-                          <path
-                              fill="currentColor"
-                              d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"
-                          /></svg>
-                </button>
-                <p>search ...</p>
-              </div>
           </div>
           <!-- localization styling -->
           <button data-localization="localziation-Btn" class="h-full p-2 border rounded cursor-pointer hover:text-white group hover:border-blue-600 ">
@@ -56,11 +57,16 @@
             </svg>
           </button>
         </header>
+        <!-- div for error message -->
+        <div class="h-0 overflow-hidden transition-all duration-[.7s]" data-errMsg="error-main-div" >
+          <p  class="text-sm tracking-[.1rem] text-red-800 capitalize " data-errMsg="error-message"></p>
+        </div>
         <div data-info-holder="weader-info">
+          <div><p data-cityName="cityName" class="font-serif text-xl font-bold text-center mt-7"></p></div>
           <div data-image-holder="image-holder">
             <img src="" data-img="weatherSvg" alt="" data-weaderImage="" />
           </div>
-          <div data-dogry-main-div-holder="dogry-div-holder" class="text-center">
+          <div data-dogry-main-div-holder="dogry-div-holder" class="mt-6 text-center">
             <div data-dogree-holder="dogree-holder">
               <p data-dogry-value="dogry-value" class="inline text-2xl font-black"></p>
               <sup data-sup-value="sup-value" class="text-xl"></sup>
@@ -70,7 +76,7 @@
         </div>
       </div>
       <!-- weather moment by hours  -->
-        <div class="max-w-full px-4 mt-8 mb-6 border-t border-t-gray-200">
+        <div class="max-w-full px-4 mt-8 mb-6 border-t-gray-200" data-weather-main-div="data-weather-main-div">
             <div data-weather-moments="weather-moments-main-div" class="flex gap-4 mt-4 overflow-x-auto">
             </div>
         </div>
@@ -78,4 +84,7 @@
     <!-- this line for linking js *)* -->
     <script type="module" src="main.js"></script>
   </body>
+
 </html>
+
+
