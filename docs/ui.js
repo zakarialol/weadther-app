@@ -113,7 +113,7 @@ function putingInfoInTherePlaceFunc(finalWeatherArray,cityName){
   }
   cityNameText.textContent = cityName
   //fit current image
-  imageHolder.src = `/img/${finalWeatherArray[0].weathercondition}.svg`
+  imageHolder.src = `img/${finalWeatherArray[0].weathercondition}.svg`
   celsiusHolder.innerHTML = `${finalWeatherArray[0].temp}&deg`
   //
   const withercondition = finalWeatherArray[3].weathercondition.replaceAll('-',' ').replaceAll('day','').replaceAll('night','').trim();
@@ -130,7 +130,7 @@ function htmlFunc(finalWeatherArray){
   finalWeatherArray.slice(1).forEach((itm,index)=>{
     html += `<div data-moment="${itm-index}" class='w-14 text-center'>
                     <p class ='text-sm'>${itm.time}</p>
-                    <div><img src="/img/${itm.weathercondition}.svg" alt=""></div>
+                    <div><img src="img/${itm.weathercondition}.svg" alt=""></div>
                     <p class='text-sm'>${itm.temp}&deg</p>
                     <p class='whitespace-nowrap text-[10px]'>${itm.date}</p>
             </div>`
