@@ -106,6 +106,7 @@ function getWeatherCondition(code,isDay) {
 // function about 
 // function to to make info in there place
 function putingInfoInTherePlaceFunc(finalWeatherArray,cityName){
+  console.log('finalweatherArray *+*',finalWeatherArray)
   //cityname place
   console.log(cityName)
   if(cityName.toLowerCase().trim()=== 'white house'){
@@ -116,7 +117,7 @@ function putingInfoInTherePlaceFunc(finalWeatherArray,cityName){
   imageHolder.src = `img/${finalWeatherArray[0].weathercondition}.svg`
   celsiusHolder.innerHTML = `${finalWeatherArray[0].temp}&deg`
   //
-  const withercondition = finalWeatherArray[3].weathercondition.replaceAll('-',' ').replaceAll('day','').replaceAll('night','').trim();
+  const withercondition = finalWeatherArray[0].weathercondition.replaceAll('-',' ').replaceAll('day','').replaceAll('night','').trim();
   conditionText.textContent = withercondition
   supTextLetter.textContent = 'c'
   //creating html for the other hours
