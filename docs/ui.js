@@ -7,7 +7,6 @@ const supTextLetter = document.querySelector('[data-sup-value="sup-value"]')
 const weatherMomentsBytHours = document.querySelector('[data-weather-moments="weather-moments-main-div"]')
 const weatherMainDiv = document.querySelector('[data-weather-main-div="data-weather-main-div"]')
 const cityNameText = document.querySelector('[data-cityName="cityName"]')
-console.log(cityNameText,'city-name-text')
 const errorMessage = document.querySelector('[data-errMsg="error-message"]')
 const errorMainDiv = document.querySelector('[data-errMsg="error-main-div"]')
 import { weaderCity } from "./api.js";
@@ -22,10 +21,8 @@ export async function getWeatherBycity(city,e){
   try{
     const dataJson = await weaderCity(city)
     //
-    console.log(dataJson,'obj')
     const weather = dataJson.data.hourly
     const cityName = dataJson.cityName
-    console.log(cityName)
     //
     const date = new Date()
     const year = date.getFullYear()
@@ -110,6 +107,10 @@ function getWeatherCondition(code,isDay) {
 // function to to make info in there place
 function putingInfoInTherePlaceFunc(finalWeatherArray,cityName){
   //cityname place
+  console.log(cityName)
+  if(cityName.toLowerCase().trim()=== 'white house'){
+    cityName = 'casablanca'
+  }
   cityNameText.textContent = cityName
   //fit current image
   imageHolder.src = `/img/${finalWeatherArray[0].weathercondition}.svg`
@@ -141,7 +142,6 @@ export function errorMessagefunc(msg){
   errorMessage.textContent = msg
   let heightOfMessage = errorMessage.scrollHeight
   errorMainDiv.style.height = heightOfMessage + 'px'
-  console.log(heightOfMessage,'height of message')
   setTimeout(() => {
     errorMainDiv.style.height = 0 + 'px'
   }, 2000);
