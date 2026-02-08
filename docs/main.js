@@ -12,7 +12,6 @@ form.addEventListener('submit',(e)=>{
     let city = searchInput.value.trim()
     let regex =/^[A-Za-z ]+$/
     if(!regex.test(city) || city === ''){
-        console.log('type a city name')
         errorMessagefunc('type valide city name')
         return
     }

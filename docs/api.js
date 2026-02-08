@@ -1,6 +1,5 @@
 // selecting elemenet i will need 
 const animationDiv = document.querySelector('[data-loading="loading-Div"]')
-console.log(animationDiv,'animation div')
 // weather api
 export async function weaderCity(city) {
     animationDiv.classList.remove('hidden')

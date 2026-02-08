@@ -106,9 +106,7 @@ function getWeatherCondition(code,isDay) {
 // function about 
 // function to to make info in there place
 function putingInfoInTherePlaceFunc(finalWeatherArray,cityName){
-  console.log('finalweatherArray *+*',finalWeatherArray)
   //cityname place
-  console.log(cityName)
   if(cityName.toLowerCase().trim()=== 'white house'){
     cityName = 'casablanca'
   }
